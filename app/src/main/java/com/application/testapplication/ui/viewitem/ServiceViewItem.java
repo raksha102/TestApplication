@@ -8,9 +8,8 @@ import com.application.testapplication.ui.base.recycler_adapter.AdapterItem;
 import com.application.testapplication.ui.base.recycler_adapter.RecyclerAdapterNotifier;
 import com.application.testapplication.ui.base.recycler_adapter.RecyclerAdapterViewHolder;
 import com.application.testapplication.ui.model.data.AccountAttributeModel;
-import com.application.testapplication.ui.model.data.Subscription;
 
-public class SubscriptionViewItem extends AdapterItem<SubscriptionViewItem.Holder> {
+public class ServiceViewItem extends AdapterItem<ServiceViewItem.Holder> {
 
     private AccountAttributeModel mData;
 
@@ -21,7 +20,7 @@ public class SubscriptionViewItem extends AdapterItem<SubscriptionViewItem.Holde
 
     @Override
     public int getLayoutId() {
-        return R.layout.item_subscription;
+        return R.layout.item_service;
     }
 
     @Override

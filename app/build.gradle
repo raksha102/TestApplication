@@ -50,6 +50,17 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        develop { java.srcDirs = ['src/develop/java', 'src/develop/java/'] }
+        production { java.srcDirs = ['src/production/java', 'src/production/java/'] }
+
+    }
+
 }
 
 dependencies {
@@ -87,6 +98,8 @@ dependencies {
     compile('com.android.support:multidex:1.0.1') {
         exclude group: 'com.android.support', module: 'support'
     }
+
+    implementation 'com.google.code.gson:gson:2.8.2'
 
     //Test
     testImplementation 'junit:junit:4.12'

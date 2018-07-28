@@ -15,6 +15,9 @@ import com.application.testapplication.application.constants.BundleConstants;
 import com.application.testapplication.injection.scope.ActivityScope;
 import com.application.testapplication.injection.scope.ContainerId;
 import com.application.testapplication.ui.base.BaseActivity;
+import com.application.testapplication.ui.home.HomeScreenFragment;
+import com.application.testapplication.ui.home.SplashScreenFragment;
+import com.application.testapplication.ui.login.LoginFragment;
 import com.application.testapplication.utils.IKeyBoardUtil;
 
 import javax.inject.Inject;
@@ -35,17 +38,17 @@ public class AppNavigatorImpl implements AppNavigator {
 
     @Override
     public void launchLoginScreen() {
-
+        replaceFragment(mContainerId, LoginFragment.newInstance());
     }
 
     @Override
     public void launchWelcomeScreen() {
-
+        replaceFragment(mContainerId, SplashScreenFragment.newInstance());
     }
 
     @Override
     public void launchSubscriptionScreen() {
-
+        replaceFragment(mContainerId, HomeScreenFragment.newInstance());
     }
 
     @Override

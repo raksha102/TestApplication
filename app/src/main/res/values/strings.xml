@@ -1,3 +1,24 @@
 <resources>
-    <string name="app_name">TestApplication</string>
+    <string name="app_name">MiVi</string>
+    <string name="title_mivi_subscriptions">MiVi</string>
+    <string name="msg_welcome_to_mivi">Welcome to MiVi</string>
+    <string name="lbl_login">Login to MiVi</string>
+    <string name="err_msg_invalid_login_id">Invalid login id</string>
+    <string name="btn_login">Login</string>
+    <string name="hint_enter_login_id">Enter Login Id</string>
+    <string name="lbl_subscription_detail">Subscription</string>
+    <string name="lbl_product_detail">Product Detail</string>
+    <string name="lbl_service_detail">Service Detail</string>
+    <string name="lbl_expiry_date">Expiry Date : %s</string>
+    <string name="lbl_name">%s.%s %s</string>
+    <string name="lbl_dob">Date of Birth : %s</string>
+    <string name="lbl_contact">Contact Number : %s</string>
+    <string name="lbl_email">Email Id : %s</string>
+    <string name="lbl_product_name">Name : %s</string>
+    <string name="lbl_product_price">Price : %d</string>
+    <string name="lbl_sub_balance">Data Balance : %d</string>
+    <string name="lbl_sub_expiry">Expiry Date : %s</string>
+    <string name="lbl_service_msn">MSN : %s</string>
+    <string name="lbl_service_credit">Amount Credited : %d</string>
+    <string name="lbl_service_expiry">Expiry Date : %s</string>
 </resources>

@@ -10,6 +10,6 @@ import dagger.android.ContributesAndroidInjector;
 public abstract class ActivityBuilderModule {
 
     @ActivityScope
-    @ContributesAndroidInjector(modules = {BaseModule.class, LoginModule.class, HomeModule.class})
+    @ContributesAndroidInjector(modules = {BaseModule.class, FragmentProvider.class})
     abstract MIVIActivity bindBaseActivity();
 }
