@@ -5,7 +5,7 @@ import android.support.annotation.StringDef;
 
 public class AppConstants {
 
-    public static final String USER_LOGIN_ID = "123456";
+    public static final String USER_LOGIN_ID = "0468874507";
 
     @IntDef({SCREEN_LOGIN})
     public @interface SCREEN_TYPE {
