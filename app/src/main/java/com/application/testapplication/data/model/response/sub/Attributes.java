@@ -70,10 +70,10 @@ public class Attributes {
     private String expiryDate;
     @SerializedName("auto-renewal")
     @Expose
-    private Boolean autoRenewal;
+    private boolean autoRenewal;
     @SerializedName("primary-subscription")
     @Expose
-    private Boolean primarySubscription;
+    private boolean primarySubscription;
     @SerializedName("name")
     @Expose
     private String name;
@@ -88,16 +88,16 @@ public class Attributes {
     private Object includedInternationalTalk;
     @SerializedName("unlimited-text")
     @Expose
-    private Boolean unlimitedText;
+    private boolean unlimitedText;
     @SerializedName("unlimited-talk")
     @Expose
-    private Boolean unlimitedTalk;
+    private boolean unlimitedTalk;
     @SerializedName("unlimited-international-text")
     @Expose
-    private Boolean unlimitedInternationalText;
+    private boolean unlimitedInternationalText;
     @SerializedName("unlimited-international-talk")
     @Expose
-    private Boolean unlimitedInternationalTalk;
+    private boolean unlimitedInternationalTalk;
     @SerializedName("price")
     @Expose
     private Integer price;
@@ -186,11 +186,11 @@ public class Attributes {
         return expiryDate;
     }
 
-    public Boolean getAutoRenewal() {
+    public boolean getAutoRenewal() {
         return autoRenewal;
     }
 
-    public Boolean getPrimarySubscription() {
+    public boolean getPrimarySubscription() {
         return primarySubscription;
     }
 
@@ -210,19 +210,19 @@ public class Attributes {
         return includedInternationalTalk;
     }
 
-    public Boolean getUnlimitedText() {
+    public boolean getUnlimitedText() {
         return unlimitedText;
     }
 
-    public Boolean getUnlimitedTalk() {
+    public boolean getUnlimitedTalk() {
         return unlimitedTalk;
     }
 
-    public Boolean getUnlimitedInternationalText() {
+    public boolean getUnlimitedInternationalText() {
         return unlimitedInternationalText;
     }
 
-    public Boolean getUnlimitedInternationalTalk() {
+    public boolean getUnlimitedInternationalTalk() {
         return unlimitedInternationalTalk;
     }
 

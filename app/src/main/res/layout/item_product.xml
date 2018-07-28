@@ -42,6 +42,14 @@
                     style="@style/DetailLabelStyle"
                     android:text="@{String.format(@string/lbl_product_price, data.productPrice)}" />
 
+                <TextView
+                    style="@style/DetailLabelStyle"
+                    app:unlimitedText="@{data}" />
+
+                <TextView
+                    style="@style/DetailLabelStyle"
+                    app:unlimitedTalk="@{data}" />
+
             </LinearLayout>
 
         </LinearLayout>

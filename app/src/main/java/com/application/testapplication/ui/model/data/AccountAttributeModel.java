@@ -16,6 +16,13 @@ public class AccountAttributeModel {
     private String productName;
     private int productPrice;
     private int balance;
+    private boolean unlimitedText;
+    private boolean unlimitedTalk;
+    private boolean unlimitedIntText;
+    private boolean unlimitedIntTalk;
+    private boolean autoRenewal;
+    private boolean primarySubscription;
+
 
     public AccountAttributeModel(Attributes data) {
         firstName = data.getFirstName();
@@ -31,6 +38,12 @@ public class AccountAttributeModel {
         productName = data.getName();
         productPrice = data.getPrice() != null ? data.getPrice() : 0;
         balance = data.getIncludedDataBalance() != null ? data.getIncludedDataBalance() : 0;
+        unlimitedText = data.getUnlimitedText();
+        unlimitedTalk = data.getUnlimitedTalk();
+        unlimitedIntTalk = data.getUnlimitedInternationalTalk();
+        unlimitedIntText = data.getUnlimitedInternationalText();
+        autoRenewal = data.getAutoRenewal();
+        primarySubscription = data.getPrimarySubscription();
     }
 
     public String getFirstName() {
@@ -83,5 +96,29 @@ public class AccountAttributeModel {
 
     public long getBalance() {
         return balance;
+    }
+
+    public boolean isUnlimitedText() {
+        return unlimitedText;
+    }
+
+    public boolean isUnlimitedTalk() {
+        return unlimitedTalk;
+    }
+
+    public boolean isUnlimitedIntText() {
+        return unlimitedIntText;
+    }
+
+    public boolean isUnlimitedIntTalk() {
+        return unlimitedIntTalk;
+    }
+
+    public boolean isAutoRenewal() {
+        return autoRenewal;
+    }
+
+    public boolean isPrimarySubscription() {
+        return primarySubscription;
     }
 }
