@@ -22,7 +22,7 @@ public class AccountAttributeModel {
     private boolean unlimitedIntTalk;
     private boolean autoRenewal;
     private boolean primarySubscription;
-
+    private String paymentType;
 
     public AccountAttributeModel(Attributes data) {
         firstName = data.getFirstName();
@@ -44,6 +44,7 @@ public class AccountAttributeModel {
         unlimitedIntText = data.getUnlimitedInternationalText();
         autoRenewal = data.getAutoRenewal();
         primarySubscription = data.getPrimarySubscription();
+        paymentType = data.getPaymentType();
     }
 
     public String getFirstName() {
@@ -120,5 +121,9 @@ public class AccountAttributeModel {
 
     public boolean isPrimarySubscription() {
         return primarySubscription;
+    }
+
+    public String getPaymentType() {
+        return paymentType;
     }
 }

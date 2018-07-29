@@ -2,23 +2,26 @@ package com.application.testapplication.ui.model.view;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
-import android.text.TextUtils;
 
 import com.application.testapplication.BR;
-import com.application.testapplication.application.constants.AppConstants;
+import com.application.testapplication.domain.interactor.LoginUseCase;
 import com.application.testapplication.ui.base.navigator.AppNavigator;
 
 import javax.inject.Inject;
 
+import io.reactivex.observers.DisposableSingleObserver;
+
 public class LoginViewModel extends BaseObservable {
 
     private final AppNavigator mNavigator;
+    private final LoginUseCase mLoginUseCase;
     private String loginId;
     private boolean error;
 
     @Inject
-    public LoginViewModel(AppNavigator navigator) {
+    public LoginViewModel(AppNavigator navigator, LoginUseCase loginUseCase) {
         mNavigator = navigator;
+        mLoginUseCase = loginUseCase;
     }
 
     @Bindable
@@ -42,14 +45,22 @@ public class LoginViewModel extends BaseObservable {
     }
 
     public void onLoginButtonClick() {
-
         mNavigator.hideKeyBoard();
+        mLoginUseCase.execute(new LoginUseCase.Params(loginId))
+                .subscribeWith(new DisposableSingleObserver<Boolean>() {
+                    @Override
+                    public void onSuccess(Boolean success) {
+                        if (success) {
+                            mNavigator.launchWelcomeScreen();
+                        } else {
+                            setError(true);
+                        }
+                    }
 
-        if (TextUtils.isEmpty(loginId) || !TextUtils.equals(loginId, AppConstants.USER_LOGIN_ID)) {
-            setError(true);
-            return;
-        }
-
-        mNavigator.launchWelcomeScreen();
+                    @Override
+                    public void onError(Throwable e) {
+                        setError(true);
+                    }
+                });
     }
 }
