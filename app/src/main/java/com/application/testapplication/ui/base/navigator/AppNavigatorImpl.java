@@ -15,9 +15,9 @@ import com.application.testapplication.application.constants.BundleConstants;
 import com.application.testapplication.injection.scope.ActivityScope;
 import com.application.testapplication.injection.scope.ContainerId;
 import com.application.testapplication.ui.base.BaseActivity;
-import com.application.testapplication.ui.home.HomeScreenFragment;
-import com.application.testapplication.ui.home.SplashScreenFragment;
-import com.application.testapplication.ui.login.LoginFragment;
+import com.application.testapplication.ui.HomeScreenFragment;
+import com.application.testapplication.ui.SplashScreenFragment;
+import com.application.testapplication.ui.LoginFragment;
 import com.application.testapplication.utils.IKeyBoardUtil;
 
 import javax.inject.Inject;

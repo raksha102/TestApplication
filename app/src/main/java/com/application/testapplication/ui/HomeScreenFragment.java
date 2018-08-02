@@ -1,4 +1,4 @@
-package com.application.testapplication.ui.home;
+package com.application.testapplication.ui;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -10,18 +10,15 @@ import android.view.ViewGroup;
 
 import com.application.testapplication.R;
 import com.application.testapplication.databinding.FragmentHomeScreenBinding;
-import com.application.testapplication.ui.AccountAdapter;
 import com.application.testapplication.ui.base.BaseFragment;
-import com.application.testapplication.ui.model.data.UserAccountModel;
-import com.application.testapplication.ui.model.view.HomeViewModel;
+import com.application.testapplication.utils.DataParser;
 
 import javax.inject.Inject;
 
 public class HomeScreenFragment extends BaseFragment {
 
     @Inject
-    HomeViewModel mViewModel;
-    private AccountAdapter mAdapter;
+    DataParser mDataParser;
 
     public static HomeScreenFragment newInstance() {
         return new HomeScreenFragment();
@@ -36,8 +33,9 @@ public class HomeScreenFragment extends BaseFragment {
 
     private void seUpRecyclerView(FragmentHomeScreenBinding binding) {
         binding.rvUser.setLayoutManager(new LinearLayoutManager(getContext()));
-        mAdapter = new AccountAdapter();
-        binding.rvUser.setAdapter(mAdapter);
+        AccountAdapter adapter = new AccountAdapter();
+        binding.rvUser.setAdapter(adapter);
+        adapter.setData(mDataParser.getUserData() != null ? mDataParser.getUserData().getData() : null);
     }
 
     @Override
@@ -47,11 +45,5 @@ public class HomeScreenFragment extends BaseFragment {
 
     @Override
     protected void initViews(View view) {
-        mViewModel.getLiveData().observe(this, this::updateUI);
-        mViewModel.getData();
-    }
-
-    private void updateUI(UserAccountModel userAccountModel) {
-        mAdapter.setData(userAccountModel.getData());
     }
 }

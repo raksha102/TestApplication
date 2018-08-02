@@ -1,8 +1,8 @@
 package com.application.testapplication.injection.module;
 
-import com.application.testapplication.ui.home.HomeScreenFragment;
-import com.application.testapplication.ui.home.SplashScreenFragment;
-import com.application.testapplication.ui.login.LoginFragment;
+import com.application.testapplication.ui.HomeScreenFragment;
+import com.application.testapplication.ui.SplashScreenFragment;
+import com.application.testapplication.ui.LoginFragment;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;

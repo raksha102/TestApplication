@@ -1,4 +1,4 @@
-package com.application.testapplication.ui.home;
+package com.application.testapplication.ui;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;

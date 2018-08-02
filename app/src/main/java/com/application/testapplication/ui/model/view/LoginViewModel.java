@@ -38,7 +38,7 @@ public class LoginViewModel extends BaseObservable {
         return error;
     }
 
-    public void setError(boolean error) {
+    private void setError(boolean error) {
         this.error = error;
         notifyPropertyChanged(BR.error);
     }
