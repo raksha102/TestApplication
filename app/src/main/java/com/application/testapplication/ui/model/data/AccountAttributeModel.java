@@ -1,7 +1,5 @@
 package com.application.testapplication.ui.model.data;
 
-import com.application.testapplication.data.model.response.sub.Attributes;
-
 public class AccountAttributeModel {
     private String firstName;
     private String lastName;
@@ -23,28 +21,9 @@ public class AccountAttributeModel {
     private boolean autoRenewal;
     private boolean primarySubscription;
     private String paymentType;
+    private String type;
 
-    public AccountAttributeModel(Attributes data) {
-        firstName = data.getFirstName();
-        lastName = data.getLastName();
-        title = data.getTitle();
-        dob = data.getDateOfBirth();
-        contactNumber = data.getContactNumber();
-        email = data.getEmailAddress();
-        expiryDate = data.getExpiryDate();
-        credit = data.getCredit() != null ? data.getCredit() : 0;
-        msn = data.getMsn();
-        creditExpiry = data.getCreditExpiry();
-        productName = data.getName();
-        productPrice = data.getPrice() != null ? data.getPrice() : 0;
-        balance = data.getIncludedDataBalance() != null ? data.getIncludedDataBalance() : 0;
-        unlimitedText = data.getUnlimitedText();
-        unlimitedTalk = data.getUnlimitedTalk();
-        unlimitedIntTalk = data.getUnlimitedInternationalTalk();
-        unlimitedIntText = data.getUnlimitedInternationalText();
-        autoRenewal = data.getAutoRenewal();
-        primarySubscription = data.getPrimarySubscription();
-        paymentType = data.getPaymentType();
+    public AccountAttributeModel() {
     }
 
     public String getFirstName() {
@@ -125,5 +104,93 @@ public class AccountAttributeModel {
 
     public String getPaymentType() {
         return paymentType;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setExpiryDate(String expiryDate) {
+        this.expiryDate = expiryDate;
+    }
+
+    public void setCredit(int credit) {
+        this.credit = credit;
+    }
+
+    public void setMsn(String msn) {
+        this.msn = msn;
+    }
+
+    public void setCreditExpiry(String creditExpiry) {
+        this.creditExpiry = creditExpiry;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public void setProductPrice(int productPrice) {
+        this.productPrice = productPrice;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    public void setUnlimitedText(boolean unlimitedText) {
+        this.unlimitedText = unlimitedText;
+    }
+
+    public void setUnlimitedTalk(boolean unlimitedTalk) {
+        this.unlimitedTalk = unlimitedTalk;
+    }
+
+    public void setUnlimitedIntText(boolean unlimitedIntText) {
+        this.unlimitedIntText = unlimitedIntText;
+    }
+
+    public void setUnlimitedIntTalk(boolean unlimitedIntTalk) {
+        this.unlimitedIntTalk = unlimitedIntTalk;
+    }
+
+    public void setAutoRenewal(boolean autoRenewal) {
+        this.autoRenewal = autoRenewal;
+    }
+
+    public void setPrimarySubscription(boolean primarySubscription) {
+        this.primarySubscription = primarySubscription;
+    }
+
+    public void setPaymentType(String paymentType) {
+        this.paymentType = paymentType;
     }
 }

@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <data>
-
-        <variable
-            name="data"
-            type="com.application.testapplication.ui.model.data.AccountAttributeModel" />
-
-    </data>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/dp_16"
-        android:layout_marginStart="@dimen/dp_16"
         android:layout_marginEnd="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_16"
         app:cardCornerRadius="@dimen/dp_8"
         app:cardElevation="@dimen/dp_8">
 
@@ -25,8 +19,8 @@
             android:orientation="vertical">
 
             <TextView
-                style="@style/LabelStyle"
-                android:text="@string/lbl_service_detail" />
+                android:id="@+id/txt_title"
+                style="@style/LabelStyle" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -35,16 +29,20 @@
                 android:orientation="vertical">
 
                 <TextView
-                    style="@style/DetailLabelStyle"
-                    android:text="@{String.format(@string/lbl_service_msn, data.msn)}" />
+                    android:id="@+id/text1"
+                    style="@style/DetailLabelStyle" />
 
                 <TextView
-                    style="@style/DetailLabelStyle"
-                    android:text="@{String.format(@string/lbl_service_credit, data.credit)}" />
+                    android:id="@+id/text2"
+                    style="@style/DetailLabelStyle" />
 
                 <TextView
-                    style="@style/DetailLabelStyle"
-                    android:text="@{String.format(@string/lbl_service_expiry, data.creditExpiry)}" />
+                    android:id="@+id/text3"
+                    style="@style/DetailLabelStyle" />
+
+                <TextView
+                    android:id="@+id/text4"
+                    style="@style/DetailLabelStyle" />
 
             </LinearLayout>
 
@@ -52,4 +50,4 @@
 
     </android.support.v7.widget.CardView>
 
-</layout>
+</FrameLayout>

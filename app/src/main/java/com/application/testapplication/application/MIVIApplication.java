@@ -2,7 +2,6 @@ package com.application.testapplication.application;
 
 import android.app.Activity;
 import android.app.Application;
-import android.support.multidex.MultiDex;
 
 import com.application.testapplication.injection.component.DaggerApplicationComponent;
 
@@ -30,7 +29,6 @@ public class MIVIApplication extends Application implements HasActivityInjector 
     @Override
     public void onCreate() {
         super.onCreate();
-        MultiDex.install(this);
         initDagger();
     }
 

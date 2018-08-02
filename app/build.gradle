@@ -7,7 +7,7 @@ android {
         applicationId project.APPLICATION_ID
         minSdkVersion Integer.parseInt(project.ANDROID_MIN_SDK_VERSION)
         targetSdkVersion Integer.parseInt(project.ANDROID_TARGET_SDK_VERSION)
-        multiDexEnabled true
+        multiDexEnabled false
         flavorDimensions("mivi")
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -72,9 +72,7 @@ dependencies {
     implementation supportDependencies.appcompat
     implementation supportDependencies.design
     implementation supportDependencies.support
-    implementation supportDependencies.constraint_layout
     implementation supportDependencies.recyclerview
-    implementation supportDependencies.mediarouter
     implementation supportDependencies.cardview
 
     implementation lifecycleDependencies.lifecycle
@@ -87,21 +85,6 @@ dependencies {
     annotationProcessor daggerDependencies.daggerAndroidProcessor
     provided daggerDependencies.javaxProvided
     implementation daggerDependencies.daggerSupport
-
-    //rx-java
-    implementation rxjavaDependencies.rxjava
-    implementation rxjavaDependencies.rxandroid
-
-    //butterknife
-    implementation butterKnifeDependencies.butterknife
-    annotationProcessor butterKnifeDependencies.butterknifeAnnotationProcessor
-
-    //Multi Dex
-    compile('com.android.support:multidex:1.0.1') {
-        exclude group: 'com.android.support', module: 'support'
-    }
-
-    implementation 'com.google.code.gson:gson:2.8.2'
 
     //Test
     testImplementation 'junit:junit:4.12'

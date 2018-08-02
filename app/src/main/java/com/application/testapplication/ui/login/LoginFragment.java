@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import com.application.testapplication.R;
 import com.application.testapplication.databinding.FragmentLoginBinding;
 import com.application.testapplication.ui.base.BaseFragment;
-import com.application.testapplication.ui.model.data.AppToolbar;
 import com.application.testapplication.ui.model.view.LoginViewModel;
 
 import javax.inject.Inject;
@@ -38,10 +37,5 @@ public class LoginFragment extends BaseFragment {
 
     @Override
     protected void initViews(View view) {
-    }
-
-    @Override
-    public AppToolbar getToolBarSetting() {
-        return new AppToolbar.AppToolBarBuilder(false).build();
     }
 }

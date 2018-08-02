@@ -3,9 +3,15 @@ package com.application.testapplication.utils;
 import java.io.IOException;
 import java.io.InputStream;
 
+import javax.inject.Inject;
+
 public class FileUtil {
 
-    public static String readFromFle(InputStream inputStream){
+    @Inject
+    public FileUtil() {
+    }
+
+    public String readFromFle(InputStream inputStream){
         String data = null;
 
         try {

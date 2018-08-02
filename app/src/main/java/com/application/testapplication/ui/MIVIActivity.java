@@ -8,9 +8,4 @@ public class MIVIActivity extends BaseActivity {
     protected void initViews() {
         getNavigator().launchLoginScreen();
     }
-
-    @Override
-    protected boolean shouldDisableDrawer() {
-        return true;
-    }
 }

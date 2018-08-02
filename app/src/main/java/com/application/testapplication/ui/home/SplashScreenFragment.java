@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import com.application.testapplication.R;
 import com.application.testapplication.databinding.FragmentSplashScreenBinding;
 import com.application.testapplication.ui.base.BaseFragment;
-import com.application.testapplication.ui.model.data.AppToolbar;
 
 public class SplashScreenFragment extends BaseFragment {
 
@@ -32,16 +31,6 @@ public class SplashScreenFragment extends BaseFragment {
 
     @Override
     protected void initViews(View view) {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                getNavigator().launchSubscriptionScreen();
-            }
-        }, 3000);
-    }
-
-    @Override
-    public AppToolbar getToolBarSetting() {
-        return new AppToolbar.AppToolBarBuilder(false).build();
+        new Handler().postDelayed(() -> getNavigator().launchSubscriptionScreen(), 3000);
     }
 }
