@@ -61,29 +61,29 @@ public class DataParser {
         JSONObject attributeObj = dataObj.getJSONObject("attributes");
 
         if (AppConstants.TYPE_ACCOUNT.equalsIgnoreCase(type)) {
-            model.setFirstName(attributeObj.getString("first-name"));
-            model.setLastName(attributeObj.getString("last-name"));
-            model.setTitle(attributeObj.getString("title"));
-            model.setDob(attributeObj.getString("date-of-birth"));
-            model.setContactNumber(attributeObj.getString("contact-number"));
-            model.setEmail(attributeObj.getString("email-address"));
-            model.setPaymentType(attributeObj.getString("payment-type"));
+            model.setFirstName(getString(attributeObj,"first-name"));
+            model.setLastName(getString(attributeObj,"last-name"));
+            model.setTitle(getString(attributeObj,"title"));
+            model.setDob(getString(attributeObj,"date-of-birth"));
+            model.setContactNumber(getString(attributeObj,"contact-number"));
+            model.setEmail(getString(attributeObj,"email-address"));
+            model.setPaymentType(getString(attributeObj,"payment-type"));
         }
 
         if (AppConstants.TYPE_SERVICES.equalsIgnoreCase(type)) {
-            model.setCredit(attributeObj.getInt("credit"));
-            model.setCreditExpiry(attributeObj.getString("credit-expiry"));
-            mMsnId = attributeObj.getString("msn");
+            model.setCredit(getInt(attributeObj, "credit"));
+            model.setCreditExpiry(getString(attributeObj,"credit-expiry"));
+            mMsnId = getString(attributeObj,"msn");
             model.setMsn(mMsnId);
         }
 
         if (AppConstants.TYPE_PRODUCTS.equalsIgnoreCase(type)) {
             model.setProductName(getString(attributeObj, "name"));
             model.setProductPrice(getInt(attributeObj, "price"));
-            model.setUnlimitedTalk(attributeObj.getBoolean("unlimited-talk"));
-            model.setUnlimitedText(attributeObj.getBoolean("unlimited-text"));
-            model.setUnlimitedIntTalk(attributeObj.getBoolean("unlimited-international-talk"));
-            model.setUnlimitedIntText(attributeObj.getBoolean("unlimited-international-text"));
+            model.setUnlimitedTalk(getBoolean(attributeObj,"unlimited-talk"));
+            model.setUnlimitedText(getBoolean(attributeObj, "unlimited-text"));
+            model.setUnlimitedIntTalk(getBoolean(attributeObj,"unlimited-international-talk"));
+            model.setUnlimitedIntText(getBoolean(attributeObj,"unlimited-international-text"));
         }
 
         if (AppConstants.TYPE_SUBSCRIPTIONS.equalsIgnoreCase(type)) {
