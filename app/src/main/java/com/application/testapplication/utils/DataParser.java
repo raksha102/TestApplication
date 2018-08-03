@@ -78,8 +78,8 @@ public class DataParser {
         }
 
         if (AppConstants.TYPE_PRODUCTS.equalsIgnoreCase(type)) {
-            model.setProductName(attributeObj.getString("name"));
-            model.setProductPrice(attributeObj.getInt("price"));
+            model.setProductName(getString(attributeObj, "name"));
+            model.setProductPrice(getInt(attributeObj, "price"));
             model.setUnlimitedTalk(attributeObj.getBoolean("unlimited-talk"));
             model.setUnlimitedText(attributeObj.getBoolean("unlimited-text"));
             model.setUnlimitedIntTalk(attributeObj.getBoolean("unlimited-international-talk"));
@@ -87,13 +87,31 @@ public class DataParser {
         }
 
         if (AppConstants.TYPE_SUBSCRIPTIONS.equalsIgnoreCase(type)) {
-            model.setAutoRenewal(attributeObj.getBoolean("auto-renewal"));
-            model.setPrimarySubscription(attributeObj.getBoolean("primary-subscription"));
-            model.setBalance(attributeObj.getInt("included-data-balance"));
-            model.setExpiryDate(attributeObj.getString("expiry-date"));
+            model.setAutoRenewal(getBoolean(attributeObj, "auto-renewal"));
+            model.setPrimarySubscription(getBoolean(attributeObj, "primary-subscription"));
+            model.setBalance(getInt(attributeObj, "included-data-balance"));
+            model.setExpiryDate(getString(attributeObj, "expiry-date"));
         }
 
         return model;
+    }
+
+    private boolean getBoolean(JSONObject obj, String key) throws JSONException {
+        if (obj.has(key) && !obj.isNull(key))
+            return obj.getBoolean(key);
+        return false;
+    }
+
+    private String getString(JSONObject obj, String key) throws JSONException {
+        if (obj.has(key) && !obj.isNull(key))
+            return obj.getString(key);
+        return null;
+    }
+
+    private int getInt(JSONObject obj, String key) throws JSONException {
+        if (obj.has(key) && !obj.isNull(key))
+            return obj.getInt(key);
+        return -1;
     }
 
     public UserAccountModel getUserData() {
